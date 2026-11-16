@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1060" viewBox="0 0 1500 1060">
+<style>text{font-family:Arial,sans-serif;fill:#20334a}.title{font-size:30px;font-weight:bold}.h{font-size:22px;font-weight:bold}.t{font-size:17px}.small{font-size:14px}.wire{stroke:#15828b;stroke-width:2.5;fill:none}.power{stroke:#b55245;stroke-width:2.5;fill:none}.ground{stroke:#586b7c;stroke-width:2.5;fill:none}.box{fill:white;stroke:#9db1c3;stroke-width:1.5}</style>
+<rect width="1500" height="1060" fill="#f3f7fa"/>
+<text x="40" y="48" class="title">Pan–Tilt Face Tracking | Wiring</text>
+<text x="40" y="78" class="t">Laptop webcam + OpenCV · Arduino Uno · 2 × MG996R · external regulated 5 V servo supply</text>
+<rect x="35" y="105" width="1430" height="155" rx="10" class="box"/>
+<text x="51" y="136" class="h">DATA FLOW</text>
+<text x="65" y="180" class="t">Webcam</text>
+<path d="M160 175 L245 175" class="wire"/>
+<text x="265" y="180" class="t">Python / OpenCV</text>
+<path d="M455 175 L660 175" class="wire"/>
+<text x="490" y="158" class="small">USB · 115200 baud</text>
+<text x="680" y="180" class="t">Arduino Uno</text>
+<path d="M830 175 L990 175" class="wire"/>
+<text x="1010" y="180" class="t">Pan / tilt angle signals</text>
+<text x="65" y="231" class="t">Serial message: pan,tilt + newline. Example: 90,120 sets pan to 90° and tilt to 120°.</text>
+<rect x="35" y="285" width="1430" height="420" rx="10" class="box"/>
+<text x="51" y="316" class="h">SIGNALS &amp; SEPARATE SERVO POWER</text>
+<rect x="65" y="355" width="260" height="270" rx="10" class="box"/>
+<text x="81" y="386" class="h">ARDUINO UNO</text>
+<rect x="630" y="355" width="300" height="110" rx="10" class="box"/>
+<text x="646" y="386" class="h">PAN · MG996R</text>
+<rect x="1100" y="355" width="300" height="110" rx="10" class="box"/>
+<text x="1116" y="386" class="h">TILT · MG996R</text>
+<text x="85" y="427" class="t">D9</text>
+<path d="M200 421 L650 421" class="wire"/>
+<text x="680" y="448" class="small">Signal</text>
+<text x="85" y="480" class="t">D10</text>
+<path d="M200 475 L1070 475" class="wire"/>
+<path d="M1070 475 L1070 421" class="wire"/>
+<path d="M1070 421 L1120 421" class="wire"/>
+<text x="85" y="555" class="t">GND</text>
+<path d="M200 550 L560 550" class="ground"/>
+<path d="M560 550 L560 630" class="ground"/>
+<rect x="630" y="530" width="400" height="125" rx="10" class="box"/>
+<text x="646" y="561" class="h">REGULATED 5 V SUPPLY</text>
+<text x="650" y="596" class="t">+5 V</text>
+<text x="650" y="630" class="t">GND / negative</text>
+<path d="M735 590 L1060 590" class="power"/>
+<path d="M1060 590 L1060 320" class="power"/>
+<path d="M1060 320 L820 320" class="power"/>
+<path d="M820 320 L820 355" class="power"/>
+<path d="M1060 320 L1290 320" class="power"/>
+<path d="M1290 320 L1290 355" class="power"/>
+<text x="915" y="308" class="small">Both red wires → +5 V</text>
+<path d="M795 625 L1075 625" class="ground"/>
+<path d="M560 630 L795 630" class="ground"/>
+<path d="M795 630 L795 625" class="ground"/>
+<path d="M1075 625 L1075 500" class="ground"/>
+<path d="M1075 500 L800 500" class="ground"/>
+<path d="M800 500 L800 465" class="ground"/>
+<path d="M1075 500 L1270 500" class="ground"/>
+<path d="M1270 500 L1270 465" class="ground"/>
+<text x="1110" y="550" class="small">Both brown / black wires</text>
+<text x="1110" y="575" class="small">→ external GND</text>
+<text x="65" y="680" class="t">Uno USB → laptop. External supply positive is not connected to the Uno 5V pin. All grounds share a reference.</text>
+<rect x="35" y="730" width="700" height="220" rx="10" class="box"/>
+<text x="51" y="761" class="h">V3 WORKING RANGES</text>
+<text x="65" y="795" class="t">Pan: 45–135° · Tilt: 55–125° · Centre: 90°,90°</text>
+<text x="65" y="836" class="t">Angle smoothing: 0.18 · maximum serial cap: 50 Hz</text>
+<text x="65" y="877" class="t">D9/D10 match the supplied turret.ino sketch.</text>
+<text x="65" y="917" class="small">Firmware accepts 0–180°; calibrate bracket travel first.</text>
+<rect x="765" y="730" width="700" height="220" rx="10" class="box"/>
+<text x="781" y="761" class="h">POWER &amp; OPERATION</text>
+<text x="795" y="795" class="t">Do not power MG996R servos from the Uno 5V pin.</text>
+<text x="795" y="836" class="t">Use adequate supply current and short power wiring.</text>
+<text x="795" y="877" class="t">Keep the laser switched off during face tracking.</text>
+<text x="795" y="917" class="small">Close Arduino Serial Monitor before starting Python.</text>
+<text x="40" y="1018" class="small">See docs/WIRING.md and docs/SETUP.md. Diagram follows the supplied Uno D9/D10 wiring.</text>
+</svg>
